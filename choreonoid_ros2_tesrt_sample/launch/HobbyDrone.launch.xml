@@ -1,0 +1,5 @@
+<launch>
+  <arg name="choreonoid_arg" default=""/>
+  <node name="choreonoid" pkg="choreonoid_ros" exec="choreonoid" args="/home/ubuntu/tes_regular_tetrahedron/HobbyDrone/project/HobbyDrone.cnoid" output="screen"/>
+  <node pkg="choreonoid_ros2_sample_drone_tutorial" exec="node" name="joy_node" respawn="true"/>
+</launch>
