@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=TES_RT_HobbyDrone
+Exec=bash -c  "bash /home/ubuntu/tes_regular_tetrahedron/desktop/HobbyDrone.sh;bash"
+#Icon=/home/ubuntu/Desktop/icon.png
+Terminal=true
