@@ -1,0 +1,414 @@
+items:
+  id: 0
+  name: "RootItem"
+  plugin: Base
+  class: RootItem
+  is_builtin_item: true
+  children:
+    -
+      id: 1
+      name: "World"
+      plugin: Body
+      class: WorldItem
+      is_selected: true
+      is_checked: true
+      data:
+        collision_detection: false
+        collision_detector: AISTCollisionDetector
+        default_material_table_file: "${SHARE}/default/materials.yaml"
+      children:
+        -
+          id: 2
+          name: "AizuSpider"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "${SHARE}/model/AizuSpider/AizuSpiderNA.body"
+            format: CHOREONOID-BODY
+            currentBaseLink: "CHASSIS"
+            rootPosition: [ -3, -3, 0.036 ]
+            rootAttitude: [
+              0.999997641, 0.000376765462, -0.00213907163,
+              -0.000376800263, 0.999999929, -1.58662705e-05,
+              0.0021390655, 1.66722358e-05, 0.999997712 ]
+            jointDisplacements: [
+              -3.4234e-07, -3.52381e-07, 3.97093e-07, -1.69066e-06, 94.4262, 98.3751, 45.2219, 48.8036, -19.9572, 94.4243,
+              -146.369, 45.2202, 172.52, 94.4245, -132.141, 45.2203 ]
+            initialJointDisplacements: [
+              -3.4234e-07, -3.52381e-07, 3.97093e-07, -1.69066e-06, 1465.28, 1127.04, 822.832, 848.018, 1939.36, 1465.28,
+              1600.58, 822.832, 2375.52, 1465.28, 1886.85, 822.832 ]
+            initialRootPosition: [ -3, -3, 0.036 ]
+            initialRootAttitude: [
+              0.999997641, 0.000376765462, -0.00213907163,
+              -0.000376800263, 0.999999929, -1.58662705e-05,
+              0.0021390655, 1.66722358e-05, 0.999997712 ]
+            fix_root: false
+            collisionDetection: true
+            selfCollisionDetection: true
+            lock_location: false
+            scene_sensitive: true
+          children:
+            -
+              id: 3
+              name: "AizuSpiderController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "AizuSpiderController"
+                base_directory: "Controller directory"
+                reloading: true
+                export_symbols: false
+              children:
+                -
+                  id: 4
+                  name: "AizuSpider_JoystickInput"
+                  plugin: Body
+                  class: SimpleControllerItem
+                  data:
+                    isNoDelayMode: false
+                    controllerOptions: ""
+                    controller: "JoyTopicSubscriberController"
+                    base_directory: "Controller directory"
+                    reloading: false
+                    export_symbols: false
+            -
+              id: 5
+              name: "BodyROS2"
+              plugin: ROS2
+              class: BodyROS2Item
+              data:
+                body_ros_version: 0
+                joint_state_update_rate: 100
+        -
+          id: 6
+          name: "AGXSimulator"
+          plugin: AGXDynamics
+          class: AGXSimulatorItem
+          data:
+            time_step: 0.005
+            realtime_sync_mode: compensatory
+            recording: full
+            time_range_mode: unlimited
+            time_length: 180
+            is_active_control_time_range_mode: false
+            output_all_link_positions: true
+            output_device_states: true
+            use_controller_threads: true
+            record_collision_data: false
+            controller_options: "position"
+            block_scene_view_edit_mode: false
+            Gravity: [ 0, 0, -9.80665 ]
+            NumThreads: 4
+            ContactReduction: true
+            ContactReductionBinResolution: 3
+            ContactReductionThreshhold: 12
+            ContactWarmstarting: false
+            AutoSleep: false
+            SaveToAGXFileOnStart: false
+            DebugMessageOnConsole: 4
+        -
+          id: 7
+          name: "Floor"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "${HOME}/ros2_ws/src/choreonoid/share/model/misc/floor.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 0, 0, -0.1 ]
+            rootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            initialRootPosition: [ 0, 0, -0.1 ]
+            initialRootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+        -
+          id: 8
+          name: "regular_tetrahedron_connection"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "../model/regular_tetrahedron_connection.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 0, 0, 0.8 ]
+            rootAttitude: [
+              0.965925826, -0.0449434555, -0.254887002,
+              1.28651742e-11, 0.984807753, -0.173648178,
+              0.258819045, 0.167731259, 0.951251243 ]
+            jointDisplacements: [ 0, 0, 0, 0, 0, 0 ]
+            initialRootPosition: [ 0, 0, 0.8 ]
+            initialRootAttitude: [
+              0.965925826, -0.0449434555, -0.254887002,
+              2.26054349e-11, 0.984807753, -0.173648178,
+              0.258819045, 0.167731259, 0.951251243 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+        -
+          id: 9
+          name: "wall"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "../model/wall/wall.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 0, 0, 0.8 ]
+            rootAttitude: [
+              0.965925826, -0.0449434555, -0.254887002,
+              1.28651742e-11, 0.984807753, -0.173648178,
+              0.258819045, 0.167731259, 0.951251243 ]
+            initialRootPosition: [ 0, 0, 0.8 ]
+            initialRootAttitude: [
+              0.965925826, -0.0449434555, -0.254887002,
+              2.26211168e-11, 0.984807753, -0.173648178,
+              0.258819045, 0.167731259, 0.951251243 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+        -
+          id: 10
+          name: "TargetTS4_35-50-A1"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "../model/target/TargetTS4_35-50-A1.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ -2.4416734, -0.47559903, 0.519457027 ]
+            rootAttitude: [
+              0.352933225, 0.119064291, 0.928041935,
+              0.398838454, 0.878097499, -0.264334389,
+              -0.846384089, 0.463431199, 0.262422365 ]
+            initialRootPosition: [ -2.4416734, -0.47559903, 0.519457027 ]
+            initialRootAttitude: [
+              0.352933225, 0.119064291, 0.928041935,
+              0.398838454, 0.878097499, -0.264334389,
+              -0.846384089, 0.463431199, 0.262422365 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+        -
+          id: 11
+          name: "TargetTS4_35-50-A2"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "../model/target/TargetTS4_35-50-A2.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ -1.21818163, 1.18279805, 1.22420698 ]
+            rootAttitude: [
+              0.814363131, 0.365306143, 0.450959103,
+              0.57804432, -0.579841452, -0.574150375,
+              0.0517441221, 0.728241246, -0.683364642 ]
+            initialRootPosition: [ -1.21818163, 1.18279805, 1.22420698 ]
+            initialRootAttitude: [
+              0.814363131, 0.365306143, 0.450959103,
+              0.57804432, -0.579841452, -0.574150375,
+              0.0517441223, 0.728241246, -0.683364642 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+        -
+          id: 12
+          name: "TargetTS4_35-50-A3"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "../model/target/TargetTS4_35-50-A3.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ -0.474068435, -0.586183413, 0.959371107 ]
+            rootAttitude: [
+              0.713943302, 0.68246743, -0.156598748,
+              0.426554797, -0.246549875, 0.870209265,
+              0.555280079, -0.688078023, -0.467132388 ]
+            initialRootPosition: [ -0.474068435, -0.586183413, 0.959371107 ]
+            initialRootAttitude: [
+              0.713943302, 0.68246743, -0.156598748,
+              0.426554797, -0.246549874, 0.870209265,
+              0.555280079, -0.688078023, -0.467132388 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+views:
+  -
+    id: 0
+    plugin: Base
+    class: GeneralSliderView
+  -
+    id: 1
+    plugin: Base
+    class: ItemPropertyView
+    mounted: true
+  -
+    id: 2
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state:
+      expanded: [ 1, 2, 3 ]
+  -
+    id: 3
+    plugin: Base
+    class: LocationView
+    state:
+      show_rpy: true
+      unique_rpy: false
+      show_quaternion: false
+      show_rotation_matrix: false
+      coordinate: parent
+  -
+    id: 4
+    plugin: Base
+    class: MessageView
+    mounted: true
+  -
+    id: 5
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state:
+      operation_mode: view
+      viewpoint_operation_mode: third_person
+      focus_position: [ -1.81671, -1.66223, 0.0778944 ]
+      visible_polygon_elements: [ face ]
+      highlighting: false
+      collision_lines: false
+      cameras:
+        -
+          camera: [ System, Perspective ]
+          is_current: true
+          eye: [ -2.25731, -11.2365, 1.92786 ]
+          direction: [ 0.0874236, 0.987525, -0.130963 ]
+          up: [ 0.0115487, 0.130453, 0.991387 ]
+        -
+          camera: [ System, Orthographic ]
+          ortho_height: 20
+      lighting_mode: normal
+      culling_mode: enabled
+      shading_mode: smooth
+      world_light: true
+      world_light_intensity: 0.4
+      ambient_light: true
+      ambient_light_intensity: 0
+      head_light: true
+      head_light_intensity: 0.6
+      world_light_shadow: true
+      shadow_lights:
+        - { index: 0, enabled: true }
+        - { index: 1, enabled: false }
+      background_color: [ 0.1, 0.1, 0.3 ]
+      line_width: 1
+      point_size: 1
+      field_of_view: 39.981
+      clip_distances: [ 0.01, 10000 ]
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGrid: false
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      yzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      xy_grid_color: [ 0.9, 0.9, 0.9 ]
+      xz_grid_color: [ 0.9, 0.9, 0.9 ]
+      yz_grid_color: [ 0.9, 0.9, 0.9 ]
+  -
+    id: 6
+    name: "シーン 2"
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state:
+      operation_mode: view
+      viewpoint_operation_mode: third_person
+      focus_position: [ 0, 0, 0 ]
+      visible_polygon_elements: [ face ]
+      highlighting: false
+      collision_lines: false
+      cameras:
+        -
+          camera: [ AizuSpider, FRONT_CAMERA ]
+          is_current: true
+        -
+          camera: [ System, Perspective ]
+          eye: [ 3, 1.5, 1.2 ]
+          direction: [ -0.880451, -0.440225, -0.17609 ]
+          up: [ -0.1575, -0.0787497, 0.984374 ]
+        -
+          camera: [ System, Orthographic ]
+          ortho_height: 20
+      lighting_mode: normal
+      culling_mode: enabled
+      shading_mode: smooth
+      world_light: true
+      world_light_intensity: 0.4
+      ambient_light: true
+      ambient_light_intensity: 0
+      head_light: true
+      head_light_intensity: 0.6
+      world_light_shadow: true
+      shadow_lights:
+        - { index: 0, enabled: true }
+        - { index: 1, enabled: false }
+      background_color: [ 0.1, 0.1, 0.3 ]
+      line_width: 1
+      point_size: 1
+      field_of_view: 39.981
+      clip_distances: [ 0.01, 10000 ]
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGrid: false
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      yzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      xy_grid_color: [ 0.9, 0.9, 0.9 ]
+      xz_grid_color: [ 0.9, 0.9, 0.9 ]
+      yz_grid_color: [ 0.9, 0.9, 0.9 ]
+  -
+    id: 7
+    plugin: Base
+    class: VirtualJoystickView
+    mounted: true
+  -
+    id: 8
+    plugin: Body
+    class: BodyLinkView
+    mounted: true
+    state:
+      showRotationMatrix: false
+  -
+    id: 9
+    plugin: Body
+    class: JointDisplacementView
+    mounted: true
+    state:
+ 
