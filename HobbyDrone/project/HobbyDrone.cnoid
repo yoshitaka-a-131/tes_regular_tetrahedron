@@ -19,126 +19,6 @@ items:
       children:
         -
           id: 2
-          name: "HobbyDrone"
-          plugin: Body
-          class: BodyItem
-          is_checked: true
-          data:
-            file: "${SHARE}/model/HobbyDrone/HobbyDrone.body"
-            format: CHOREONOID-BODY
-            currentBaseLink: "CHASSIS"
-            rootPosition: [ -3, -3, 0.299899332 ]
-            rootAttitude: [
-              1, 1.80279287e-14, -2.71870445e-14,
-              -1.80279287e-14, 1, 4.71937351e-15,
-              2.71870445e-14, -4.71937351e-15, 1 ]
-            initialRootPosition: [ -3, -3, 0.2999 ]
-            initialRootAttitude: [
-              1, -8.03620609e-16, -5.42371855e-14,
-              8.03620609e-16, 1, 9.62607707e-15,
-              5.42371855e-14, -9.62607707e-15, 1 ]
-            fix_root: false
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
-          children:
-            -
-              id: 3
-              name: "JoystickController"
-              plugin: Body
-              class: SimpleControllerItem
-              data:
-                isNoDelayMode: false
-                controllerOptions: ""
-                controller: "HobbyDroneJoystickController"
-                base_directory: "Controller directory"
-                reloading: false
-                export_symbols: false
-              children:
-                -
-                  id: 4
-                  name: "HobbyDrone_JoystickInput"
-                  plugin: Body
-                  class: SimpleControllerItem
-                  data:
-                    isNoDelayMode: false
-                    controllerOptions: ""
-                    controller: "JoyTopicSubscriberController"
-                    base_directory: "Controller directory"
-                    reloading: false
-                    export_symbols: false
-            -
-              id: 5
-              name: "BodyROS2"
-              plugin: ROS2
-              class: BodyROS2Item
-              data:
-                body_ros_version: 0
-                joint_state_update_rate: 100
-            -
-              id: 6
-              name: "SensorVisualizer"
-              plugin: Body
-              class: SensorVisualizerItem
-              data:
-                sub_items:
-                  -
-                    class: AccelerationSensorVisualizerItem
-                    name: AccelerationSensor
-                    ratio: 0.1
-                    threshold: 0.05
-                    offset: [ 0, 0, -9.8 ]
-                  -
-                    class: RateGyroSensorVisualizerItem
-                    name: RateGyro
-                    ratio: 0.4
-                    threshold: 0.01
-                    offset: [ 0, 0, 0 ]
-                  -
-                    class: CameraImageVisualizerItem
-                    name: FrontCamera
-                    is_checked: true
-            -
-              id: 7
-              name: "MultiCollider"
-              plugin: SimpleCollider
-              class: MultiColliderItem
-              data:
-                translation: [ -3, -3, 0.299899 ]
-                rotation: [ -2.704e-13, -1.5577e-12, -1.03292e-12 ]
-                size: [ 1, 1, 1 ]
-                diffuse_color: [ 1, 0, 1 ]
-                radius: 0.5
-                height: 1
-                specular_exponent: 25
-                transparency: 1
-                scene_type: Box
-                collider_type: VFX
-                density: 0
-                viscosity: 0
-                steady_flow: [ 0, 0, 0 ]
-                inbound_delay: 0
-                inbound_rate: 0
-                inbound_loss: 0
-                outbound_delay: 0
-                outbound_rate: 0
-                outbound_loss: 0
-                source: 0.0.0.0/0
-                destination: 0.0.0.0/0
-                hsv: [ 0, 0, 0 ]
-                rgb: [ 0, 0, 0 ]
-                coef_b: 0
-                coef_d: 0
-                std_dev: 0
-                salt_amount: 0.01
-                salt_chance: 0.01
-                pepper_amount: 0
-                pepper_chance: 1
-                mosaic_chance: 0.01
-                kernel: 16
-        -
-          id: 10
           name: "FluidArea"
           plugin: SimpleCollider
           class: MultiColliderItem
@@ -176,7 +56,7 @@ items:
             mosaic_chance: 0
             kernel: 16
         -
-          id: 11
+          id: 3
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
@@ -193,7 +73,7 @@ items:
             record_collision_data: false
             controller_options: ""
             block_scene_view_edit_mode: false
-            time_sync_items: [ 8 ]
+            time_sync_items: [ 25 ]
             dynamicsMode: "Forward dynamics"
             integrationMode: runge-kutta
             gravity: [ 0, 0, -9.80665 ]
@@ -210,14 +90,14 @@ items:
             oldAccelSensorMode: false
           children:
             -
-              id: 12
+              id: 4
               name: "CFDSimulator"
               plugin: CFD
               class: CFDSimulatorItem
               data:
                 enabled: true
             -
-              id: 13
+              id: 5
               name: "VFXVisionSimulator"
               plugin: VFX
               class: VFXVisionSimulatorItem
@@ -237,7 +117,7 @@ items:
                 enable_additional_lights: true
                 antialiasing: false
         -
-          id: 14
+          id: 6
           name: "MultiCollider"
           plugin: SimpleCollider
           class: MultiColliderItem
@@ -275,7 +155,7 @@ items:
             mosaic_chance: 1
             kernel: 16
         -
-          id: 15
+          id: 7
           name: "Floor"
           plugin: Body
           class: BodyItem
@@ -299,7 +179,7 @@ items:
             lock_location: false
             scene_sensitive: true
         -
-          id: 16
+          id: 8
           name: "AGXSimulator"
           plugin: AGXDynamics
           class: AGXSimulatorItem
@@ -316,7 +196,6 @@ items:
             record_collision_data: false
             controller_options: ""
             block_scene_view_edit_mode: false
-            time_sync_items: [ 9 ]
             Gravity: [ 0, 0, -9.80665 ]
             NumThreads: 1
             ContactReduction: true
@@ -328,14 +207,14 @@ items:
             DebugMessageOnConsole: 4
           children:
             -
-              id: 17
+              id: 9
               name: "CFDSimulator"
               plugin: CFD
               class: CFDSimulatorItem
               data:
                 enabled: true
             -
-              id: 18
+              id: 10
               name: "VFXVisionSimulator"
               plugin: VFX
               class: VFXVisionSimulatorItem
@@ -355,7 +234,7 @@ items:
                 enable_additional_lights: true
                 antialiasing: false
         -
-          id: 19
+          id: 11
           name: "regular_tetrahedron_connection"
           plugin: Body
           class: BodyItem
@@ -380,7 +259,7 @@ items:
             lock_location: false
             scene_sensitive: true
         -
-          id: 20
+          id: 12
           name: "TargetTS4_35-50-A1"
           plugin: Body
           class: BodyItem
@@ -404,7 +283,7 @@ items:
             lock_location: false
             scene_sensitive: true
         -
-          id: 21
+          id: 13
           name: "TargetTS4_35-50-A2"
           plugin: Body
           class: BodyItem
@@ -414,13 +293,13 @@ items:
             format: CHOREONOID-BODY
             rootPosition: [ 0.624999864, -0.793861996, 1.10206072 ]
             rootAttitude: [
-              0.873430415, 0.0750854264, -0.481125233,
-              0.272749075, 0.743068746, 0.611111103,
+              0.873430415, 0.0750854266, -0.481125233,
+              0.272749075, 0.743068747, 0.611111103,
               0.403394661, -0.664989486, 0.628539363 ]
             initialRootPosition: [ 0.624999864, -0.793861996, 1.10206072 ]
             initialRootAttitude: [
-              0.873430415, 0.0750854264, -0.481125233,
-              0.272749075, 0.743068746, 0.611111103,
+              0.873430415, 0.0750854266, -0.481125233,
+              0.272749075, 0.743068747, 0.611111103,
               0.403394661, -0.664989486, 0.628539363 ]
             fix_root: true
             collisionDetection: true
@@ -428,7 +307,7 @@ items:
             lock_location: false
             scene_sensitive: true
         -
-          id: 22
+          id: 14
           name: "TargetTS4_35-50-A3"
           plugin: Body
           class: BodyItem
@@ -452,7 +331,7 @@ items:
             lock_location: false
             scene_sensitive: true
         -
-          id: 23
+          id: 15
           name: "TargetTS4_35-50-A4"
           plugin: Body
           class: BodyItem
@@ -462,21 +341,21 @@ items:
             format: CHOREONOID-BODY
             rootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             rootAttitude: [
-              0.213243127, 0.39998664, -0.891368642,
-              0.709567777, 0.563752604, 0.422725171,
-              0.671595815, -0.722629704, -0.163601263 ]
+              0.21324312, 0.399986645, -0.891368643,
+              0.709567782, 0.563752601, 0.42272517,
+              0.671595814, -0.722629705, -0.163601273 ]
             initialRootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             initialRootAttitude: [
-              0.213243127, 0.39998664, -0.891368642,
-              0.709567777, 0.563752604, 0.422725171,
-              0.671595815, -0.722629704, -0.163601263 ]
+              0.213243122, 0.399986644, -0.891368643,
+              0.709567781, 0.563752602, 0.42272517,
+              0.671595814, -0.722629705, -0.16360127 ]
             fix_root: true
             collisionDetection: true
             selfCollisionDetection: false
             lock_location: false
             scene_sensitive: true
         -
-          id: 24
+          id: 16
           name: "wall"
           plugin: Body
           class: BodyItem
@@ -499,6 +378,152 @@ items:
             selfCollisionDetection: false
             lock_location: false
             scene_sensitive: true
+        -
+          id: 17
+          name: "HobbyDrone"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "../model/HobbyDrone.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ -3, -3, 0.1 ]
+            rootAttitude: [
+              1, 0, 8.58212763e-12,
+              0, 1, 0,
+              -8.58212763e-12, 0, 1 ]
+            jointDisplacements: [ 4.27312e-10 ]
+            initialRootPosition: [ -3, -3, 0.1 ]
+            initialRootAttitude: [
+              1, 0, 8.58212763e-12,
+              0, 1, 0,
+              -8.58212763e-12, 0, 1 ]
+            fix_root: false
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+          children:
+            -
+              id: 18
+              name: "SensorVisualizer"
+              plugin: Body
+              class: SensorVisualizerItem
+              is_checked: true
+              data:
+                sub_items:
+                  -
+                    class: AccelerationSensorVisualizerItem
+                    name: AccelerationSensor
+                    ratio: 0.1
+                    threshold: 0.05
+                    offset: [ 0, 0, -9.8 ]
+                  -
+                    class: RateGyroSensorVisualizerItem
+                    name: RateGyro
+                    ratio: 0.4
+                    threshold: 0.01
+                    offset: [ 0, 0, 0 ]
+                  -
+                    class: CameraImageVisualizerItem
+                    name: Camera
+                    is_checked: true
+            -
+              id: 19
+              name: "MultiCollider"
+              plugin: SimpleCollider
+              class: MultiColliderItem
+              data:
+                translation: [ -3, -3, 0.1 ]
+                rotation: [ 0, 4.9172e-10, 0 ]
+                size: [ 1, 1, 1 ]
+                diffuse_color: [ 1, 0, 1 ]
+                radius: 0.5
+                height: 1
+                specular_exponent: 25
+                transparency: 1
+                scene_type: Box
+                collider_type: VFX
+                density: 0
+                viscosity: 0
+                steady_flow: [ 0, 0, 0 ]
+                inbound_delay: 0
+                inbound_rate: 0
+                inbound_loss: 0
+                outbound_delay: 0
+                outbound_rate: 0
+                outbound_loss: 0
+                source: 0.0.0.0/0
+                destination: 0.0.0.0/0
+                hsv: [ 0, 0, 0 ]
+                rgb: [ 0, 0, 0 ]
+                coef_b: 0
+                coef_d: 0
+                std_dev: 0
+                salt_amount: 0.01
+                salt_chance: 0.01
+                pepper_amount: 0
+                pepper_chance: 1
+                mosaic_chance: 0.01
+                kernel: 16
+            -
+              id: 20
+              name: "JoystickController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "HobbyDroneJoystickController"
+                base_directory: "Controller directory"
+                reloading: false
+                export_symbols: false
+              children:
+                -
+                  id: 21
+                  name: "HobbyDrone_JoystickInput"
+                  plugin: Body
+                  class: SimpleControllerItem
+                  data:
+                    isNoDelayMode: false
+                    controllerOptions: ""
+                    controller: "JoyTopicSubscriberController"
+                    base_directory: "Controller directory"
+                    reloading: false
+                    export_symbols: false
+            -
+              id: 22
+              name: "BodyROS2"
+              plugin: ROS2
+              class: BodyROS2Item
+              data:
+                body_ros_version: 0
+                joint_state_update_rate: 100
+            -
+              id: 23
+              name: "TiltCameraController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "TiltCameraJoystickController"
+                base_directory: "Controller directory"
+                reloading: false
+                export_symbols: false
+              children:
+                -
+                  id: 24
+                  name: "HobbyDrone_JoystickInput"
+                  plugin: Body
+                  class: SimpleControllerItem
+                  data:
+                    isNoDelayMode: false
+                    controllerOptions: ""
+                    controller: "JoyTopicSubscriberController"
+                    base_directory: "Controller directory"
+                    reloading: false
+                    export_symbols: false
 views:
   -
     id: 0
@@ -510,23 +535,46 @@ views:
     name: "Image"
     plugin: Base
     class: ImageView
-    mounted: true
-    state:
-      imageable_item: [ 6, "FrontCamera" ]
   -
     id: 2
+    name: "画像 2"
+    plugin: Base
+    class: ImageView
+  -
+    id: 3
+    name: "画像 3"
+    plugin: Base
+    class: ImageView
+    state:
+      imageable_item: [ 18, "Camera" ]
+  -
+    id: 4
+    name: "画像 4"
+    plugin: Base
+    class: ImageView
+    state:
+      imageable_item: [ 18, "Camera" ]
+  -
+    id: 5
+    name: "画像"
+    plugin: Base
+    class: ImageView
+    state:
+      imageable_item: [ 18, "Camera" ]
+  -
+    id: 6
     plugin: Base
     class: ItemPropertyView
     mounted: true
   -
-    id: 3
+    id: 7
     plugin: Base
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 1, 2, 3, 4, 11, 12, 16, 19 ]
+      expanded: [ 1, 3, 4, 8, 11, 17, 18, 20, 23 ]
   -
-    id: 4
+    id: 8
     plugin: Base
     class: LocationView
     state:
@@ -536,19 +584,19 @@ views:
       show_rotation_matrix: false
       coordinate: world
   -
-    id: 5
+    id: 9
     plugin: Base
     class: MessageView
     mounted: true
   -
-    id: 6
+    id: 10
     plugin: Base
     class: SceneView
     mounted: true
     state:
       operation_mode: view
       viewpoint_operation_mode: third_person
-      focus_position: [ 0.0329524, -1.02485, 1.60506 ]
+      focus_position: [ -1.64189, -1.41463, 1.19987 ]
       visible_polygon_elements: [ face ]
       highlighting: false
       collision_lines: false
@@ -556,9 +604,9 @@ views:
         -
           camera: [ System, Perspective ]
           is_current: true
-          eye: [ -2.35814, -9.89938, 2.63775 ]
-          direction: [ 0.310674, 0.941451, -0.130964 ]
-          up: [ 0.0410405, 0.124367, 0.991387 ]
+          eye: [ -2.34449, -14.555, 3.13172 ]
+          direction: [ 0.140985, 0.986672, -0.0812516 ]
+          up: [ 0.0114933, 0.0804346, 0.996694 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
@@ -593,19 +641,128 @@ views:
       xz_grid_color: [ 0.9, 0.9, 0.9 ]
       yz_grid_color: [ 0.9, 0.9, 0.9 ]
   -
-    id: 7
+    id: 11
+    name: "シーン 2"
+    plugin: Base
+    class: SceneView
+    state:
+      operation_mode: view
+      viewpoint_operation_mode: third_person
+      focus_position: [ -1.53893, 0.208149, 1.47492 ]
+      visible_polygon_elements: [ face ]
+      highlighting: false
+      collision_lines: false
+      cameras:
+        -
+          camera: [ HobbyDrone, Camera ]
+          is_current: true
+        -
+          camera: [ System, Perspective ]
+          eye: [ 3, 1.5, 1.2 ]
+          direction: [ -0.880451, -0.440225, -0.17609 ]
+          up: [ -0.1575, -0.0787499, 0.984374 ]
+        -
+          camera: [ System, Orthographic ]
+          ortho_height: 20
+      lighting_mode: normal
+      culling_mode: enabled
+      shading_mode: smooth
+      world_light: true
+      world_light_intensity: 0.5
+      ambient_light: true
+      ambient_light_intensity: 0.3
+      head_light: true
+      head_light_intensity: 0.75
+      world_light_shadow: true
+      shadow_lights:
+        - { index: 0, enabled: false }
+        - { index: 1, enabled: false }
+      background_color: [ 0.1, 0.1, 0.3 ]
+      line_width: 1
+      point_size: 1
+      field_of_view: 40
+      clip_distances: [ 0.01, 100 ]
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGrid: false
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      yzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      xy_grid_color: [ 0.9, 0.9, 0.9 ]
+      xz_grid_color: [ 0.9, 0.9, 0.9 ]
+      yz_grid_color: [ 0.9, 0.9, 0.9 ]
+  -
+    id: 12
+    name: "シーン"
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state:
+      operation_mode: view
+      viewpoint_operation_mode: third_person
+      focus_position: [ 0.145505, -0.027056, 0.493357 ]
+      visible_polygon_elements: [ face ]
+      highlighting: false
+      collision_lines: false
+      cameras:
+        -
+          camera: [ HobbyDrone, Camera ]
+          is_current: true
+        -
+          camera: [ System, Perspective ]
+          eye: [ 3, 1.5, 1.2 ]
+          direction: [ -0.880451, -0.440225, -0.17609 ]
+          up: [ -0.1575, -0.0787499, 0.984374 ]
+        -
+          camera: [ System, Orthographic ]
+          ortho_height: 20
+      lighting_mode: normal
+      culling_mode: enabled
+      shading_mode: smooth
+      world_light: true
+      world_light_intensity: 0.5
+      ambient_light: true
+      ambient_light_intensity: 0.3
+      head_light: true
+      head_light_intensity: 0.75
+      world_light_shadow: true
+      shadow_lights:
+        - { index: 0, enabled: false }
+        - { index: 1, enabled: false }
+      background_color: [ 0.1, 0.1, 0.3 ]
+      line_width: 1
+      point_size: 1
+      field_of_view: 40
+      clip_distances: [ 0.01, 100 ]
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGrid: false
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      yzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      xy_grid_color: [ 0.9, 0.9, 0.9 ]
+      xz_grid_color: [ 0.9, 0.9, 0.9 ]
+      yz_grid_color: [ 0.9, 0.9, 0.9 ]
+  -
+    id: 13
     plugin: Base
     class: VirtualJoystickView
     mounted: true
   -
-    id: 8
+    id: 14
     plugin: Body
     class: BodyLinkView
     mounted: true
     state:
       showRotationMatrix: false
   -
-    id: 9
+    id: 15
     plugin: Body
     class: JointDisplacementView
     mounted: true
@@ -619,15 +776,20 @@ views:
       limit_ranges: false
       show_selected_joints: false
   -
-    id: 10
+    id: 16
     plugin: Body
     class: LinkDeviceListView
     mounted: true
     state:
       element_type: link
       listing_mode: list
+      current_body_item: 17
+      body_items:
+        -
+          id: 17
+          selected_links: [ 0 ]
   -
-    id: 11
+    id: 17
     plugin: Body
     class: LinkPositionView
     state:
@@ -639,11 +801,11 @@ views:
       show_rotation_matrix: false
       target_link_type: ik_link
   -
-    id: 12
+    id: 18
     plugin: Body
     class: LinkPropertyView
   -
-    id: 13
+    id: 19
     plugin: Python
     class: PythonConsoleView
     mounted: true
@@ -651,7 +813,7 @@ toolbars:
   "TimeBar":
     current_time: 0
     min_time: 0
-    max_time: 75.134
+    max_time: 167.871
     frame_rate: 1000
     playback_frame_rate: 60
     idle_loop_driven_mode: false
@@ -672,8 +834,8 @@ toolbars:
     lazyCollisionDetectionMode: true
 Body:
   "BodySelectionManager":
-    current_body_item: 19
-    current_link: "BASE"
+    current_body_item: 17
+    current_link: "CHASSIS"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -686,7 +848,27 @@ Body:
   "OperableSceneBody":
     scene_bodies:
       -
-        body_item: 2
+        body_item: 7
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 11
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 12
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 13
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 14
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -696,32 +878,12 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 19
+        body_item: 16
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 20
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 21
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 22
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 23
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 24
+        body_item: 17
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -746,11 +908,11 @@ viewAreas:
           children:
             -
               type: pane
-              views: [ 3 ]
+              views: [ 7 ]
             -
               type: pane
-              views: [ 2, 10 ]
-              current: 2
+              views: [ 6, 16 ]
+              current: 6
         -
           type: splitter
           orientation: vertical
@@ -763,11 +925,11 @@ viewAreas:
               children:
                 -
                   type: pane
-                  views: [ 9, 8, 1 ]
-                  current: 1
+                  views: [ 15, 14, 12 ]
+                  current: 12
                 -
                   type: pane
-                  views: [ 6 ]
+                  views: [ 10 ]
             -
               type: splitter
               orientation: horizontal
@@ -775,11 +937,11 @@ viewAreas:
               children:
                 -
                   type: pane
-                  views: [ 5, 13, 0 ]
-                  current: 5
+                  views: [ 9, 19, 0 ]
+                  current: 9
                 -
                   type: pane
-                  views: [ 7 ]
+                  views: [ 13 ]
 layoutOfToolBars:
   rows:
     -

@@ -12,6 +12,7 @@ links:
     elements:
       - # QR code marker
         type: Visual
+        translation: [ 0,0,0.02 ]
         shape:
           geometry:
             type: IndexedFaceSet
@@ -37,7 +38,7 @@ links:
         geometry:
           type: Cylinder
           radius: 0.0297
-          height: 0.01
+          height: 0.05
 
       - # Cylinder wall 1
         type: Shape
