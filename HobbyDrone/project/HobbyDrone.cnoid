@@ -60,6 +60,7 @@ items:
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
+          is_selected: true
           data:
             time_step: 0.001
             realtime_sync_mode: compensatory
@@ -341,14 +342,14 @@ items:
             format: CHOREONOID-BODY
             rootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             rootAttitude: [
-              0.21324312, 0.399986645, -0.891368643,
-              0.709567782, 0.563752601, 0.42272517,
-              0.671595814, -0.722629705, -0.163601273 ]
+              0.213243116, 0.399986648, -0.891368644,
+              0.709567785, 0.563752598, 0.422725169,
+              0.671595813, -0.722629706, -0.163601279 ]
             initialRootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             initialRootAttitude: [
-              0.213243122, 0.399986644, -0.891368643,
-              0.709567781, 0.563752602, 0.42272517,
-              0.671595814, -0.722629705, -0.16360127 ]
+              0.21324312, 0.399986645, -0.891368643,
+              0.709567782, 0.5637526, 0.42272517,
+              0.671595814, -0.722629705, -0.163601274 ]
             fix_root: true
             collisionDetection: true
             selfCollisionDetection: false
@@ -387,12 +388,13 @@ items:
           data:
             file: "../model/HobbyDrone.body"
             format: CHOREONOID-BODY
-            rootPosition: [ -3, -3, 0.1 ]
+            rootPosition: [ -2.42117155, -1.60653444, 1.56313969 ]
             rootAttitude: [
-              1, 0, 8.58212763e-12,
-              0, 1, 0,
-              -8.58212763e-12, 0, 1 ]
-            jointDisplacements: [ 4.27312e-10 ]
+              0.812365855, -0.583146894, -0.00119111411,
+              0.583145819, 0.812366694, -0.0011437978,
+              0.00163462356, 0.000234589064, 0.999998636 ]
+            jointDisplacements: [ 7.34452 ]
+            initialJointDisplacements: [ 4.27312e-10 ]
             initialRootPosition: [ -3, -3, 0.1 ]
             initialRootAttitude: [
               1, 0, 8.58212763e-12,
@@ -434,8 +436,8 @@ items:
               plugin: SimpleCollider
               class: MultiColliderItem
               data:
-                translation: [ -3, -3, 0.1 ]
-                rotation: [ 0, 4.9172e-10, 0 ]
+                translation: [ -2.42117, -1.60653, 1.56314 ]
+                rotation: [ 0.013441, -0.0936571, 35.6722 ]
                 size: [ 1, 1, 1 ]
                 diffuse_color: [ 1, 0, 1 ]
                 radius: 0.5
@@ -660,7 +662,7 @@ views:
           camera: [ System, Perspective ]
           eye: [ 3, 1.5, 1.2 ]
           direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787499, 0.984374 ]
+          up: [ -0.1575, -0.0787498, 0.984374 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
@@ -715,7 +717,7 @@ views:
           camera: [ System, Perspective ]
           eye: [ 3, 1.5, 1.2 ]
           direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787499, 0.984374 ]
+          up: [ -0.1575, -0.0787498, 0.984374 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
@@ -811,7 +813,7 @@ views:
     mounted: true
 toolbars:
   "TimeBar":
-    current_time: 0
+    current_time: 34.296
     min_time: 0
     max_time: 167.871
     frame_rate: 1000
