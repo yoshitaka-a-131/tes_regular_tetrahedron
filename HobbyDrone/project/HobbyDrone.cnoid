@@ -341,14 +341,14 @@ items:
             format: CHOREONOID-BODY
             rootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             rootAttitude: [
-              0.21324311, 0.399986652, -0.891368645,
-              0.709567789, 0.563752595, 0.422725168,
-              0.671595812, -0.722629707, -0.163601288 ]
+              0.213243071, 0.39998668, -0.89136865,
+              0.709567817, 0.563752574, 0.422725161,
+              0.671595807, -0.722629714, -0.163601345 ]
             initialRootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             initialRootAttitude: [
-              0.213243116, 0.399986648, -0.891368644,
-              0.709567785, 0.563752598, 0.422725169,
-              0.671595813, -0.722629706, -0.16360128 ]
+              0.21324309, 0.399986667, -0.891368648,
+              0.709567804, 0.563752584, 0.422725164,
+              0.671595809, -0.722629711, -0.163601318 ]
             fix_root: true
             collisionDetection: true
             selfCollisionDetection: false
@@ -524,6 +524,44 @@ items:
                     base_directory: "Controller directory"
                     reloading: false
                     export_symbols: false
+        -
+          id: 26
+          name: "MultiCollider"
+          plugin: SimpleCollider
+          class: MultiColliderItem
+          data:
+            translation: [ 0, -0.3, 1.3 ]
+            rotation: [ 0, -0, 0 ]
+            size: [ 1.5, 1.5, 1.5 ]
+            diffuse_color: [ 0, 1, 1 ]
+            radius: 0.5
+            height: 1
+            specular_exponent: 25
+            transparency: 0.5
+            scene_type: Box
+            collider_type: CFD
+            density: 0
+            viscosity: 0
+            steady_flow: [ 0.03, 0.03, 0.03 ]
+            inbound_delay: 0
+            inbound_rate: 0
+            inbound_loss: 0
+            outbound_delay: 0
+            outbound_rate: 0
+            outbound_loss: 0
+            source: 0.0.0.0/0
+            destination: 0.0.0.0/0
+            hsv: [ 0, 0, 0 ]
+            rgb: [ 0, 0, 0 ]
+            coef_b: 0
+            coef_d: 0
+            std_dev: 0
+            salt_amount: 0
+            salt_chance: 1
+            pepper_amount: 0
+            pepper_chance: 1
+            mosaic_chance: 1
+            kernel: 16
 views:
   -
     id: 0
@@ -596,7 +634,7 @@ views:
     state:
       operation_mode: view
       viewpoint_operation_mode: third_person
-      focus_position: [ -1.64189, -1.41463, 1.19987 ]
+      focus_position: [ -2.31284, -1.21358, 1.90922 ]
       visible_polygon_elements: [ face ]
       highlighting: false
       collision_lines: false
@@ -604,9 +642,9 @@ views:
         -
           camera: [ System, Perspective ]
           is_current: true
-          eye: [ -2.34449, -14.555, 3.13172 ]
-          direction: [ 0.140985, 0.986672, -0.0812516 ]
-          up: [ 0.0114933, 0.0804346, 0.996694 ]
+          eye: [ -4.65552, -12.1038, 2.70464 ]
+          direction: [ 0.36333, 0.931416, -0.0213396 ]
+          up: [ 0.00775508, 0.0198806, 0.999772 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
@@ -660,7 +698,7 @@ views:
           camera: [ System, Perspective ]
           eye: [ 3, 1.5, 1.2 ]
           direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787497, 0.984374 ]
+          up: [ -0.1575, -0.0787495, 0.984374 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
@@ -703,7 +741,7 @@ views:
     state:
       operation_mode: view
       viewpoint_operation_mode: third_person
-      focus_position: [ 0.145505, -0.027056, 0.493357 ]
+      focus_position: [ -2.85588, -2.97427, 0.0884792 ]
       visible_polygon_elements: [ face ]
       highlighting: false
       collision_lines: false
@@ -715,7 +753,7 @@ views:
           camera: [ System, Perspective ]
           eye: [ 3, 1.5, 1.2 ]
           direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787497, 0.984374 ]
+          up: [ -0.1575, -0.0787495, 0.984374 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
@@ -834,8 +872,8 @@ toolbars:
     lazyCollisionDetectionMode: true
 Body:
   "BodySelectionManager":
-    current_body_item: 13
-    current_link: "QR-BASE"
+    current_body_item: 11
+    current_link: "BASE"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
