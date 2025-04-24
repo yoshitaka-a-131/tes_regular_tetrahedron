@@ -1,0 +1,116 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: regular_tetrahedron_connection
+rootLink: BASE_LINK
+
+links:
+  -
+    name: BASE_LINK
+    jointType: fixed
+  -
+    name: 1
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron_outlet_1.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStage.body
+    prefix: regular_tetrahedron_1
+    translation: [ 0,0, 0 ]
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_2
+    rotation: [ 3.8e-14,  5.77350278e-4, 8.16496572e-4 ,70.5287782046088 ]
+    translation: [ -0.666666667023449, -0.384900179665805, 0.272165526626335 ]
+    
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_3
+    rotation: [ -0.426401362,  -0.7385489407, -0.5222330437 ,67.1146230705506]
+    translation: [ -1.11111110984189, 0.12830006376158, 0.725774735572104]
+    
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_4
+    rotation: [ -0.1147079915,  -0.9933992326, 0 , 114.042084081132]
+    translation: [ -1.85185183766508, 0.213833427919076, 0.393127990706118]
+    
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_5
+    rotation: [ 0.1714983781,  -0.8911328969, 0.4200839341 ,54.5320845862179]
+    translation: [ -2.41975308336963, -0.0285111265186646, 0.927378836020213 ]
+    
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_6
+    rotation: [ -0.481151603,  0.8333789958, -0.2719790549 ,239.863775630787]
+    translation: [ -2.84773661979337, -0.646252158826226, 0.608172358212696]
+
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron_inlet_1.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_7
+    rotation: [ 0.7999999927,  0.3464101548, -0.4898979464 , 63.1726731181972]
+    translation: [ -2.77091906101355, -1.30517591819144, 1.08418202994168 ]
+
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron_inlet_2.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_8
+    rotation: [ 0.8185352764,  0.5713299709, -0.05985056461 , 122.12571120837]
+    translation: [ -2.43713066241582, -1.91393927456923, 0.654465936182758]
+
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron_outlet_2.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_9
+    rotation: [ -3.8e-11,  -0.5773502778, -0.816496572 , 70.5287782046088]
+    translation: [0.666666667023449, -0.384900179665806, 0.272165526626335]
+    
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_10
+    rotation: [ -0.9925832922,  4.655e-9, 0.1215661286 , 104.660229927137]
+    translation: [-1.97530864466752, 0.997889352210317, 0.201604091423579]
+    
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron_outlet_3.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_11
+    rotation: [-0.746003811,  0.4845437181, -0.4568322011 ,  86.933328565294]
+    translation: [-1.31687243152795, 1.43505992983522, 0.406568250873086]
+
+  -
+    type: SubBody
+    parent: BASE_LINK
+    uri: regular_tetrahedron/regular_tetrahedron_outlet_4.body
+    #uri: ../../rtf-test-plant/model/1F/TankPlatformStageHandrails.body
+    prefix: regular_tetrahedron_12
+    rotation: [ 0.8774535963,  -0.4749357248, 0.06716604982 , 214.470571944583]
+    translation: [-1.00960219979166, 1.79303293409449, -0.259845284601115]

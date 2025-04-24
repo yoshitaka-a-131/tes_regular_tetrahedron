@@ -1,0 +1,37 @@
+materials:
+  -
+    name: Ground
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: AizuSpiderTracks
+    density: 1e3
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: AizuSpiderWheel
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+
+contactMaterials:
+  -
+    materials: [ Ground, AizuSpiderTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    secondary_friction: 0.5
+    restitution: 0.0
+    surface_viscosity: 1e-4 # 1e-2
+    secondary_surface_viscosity: 2e-3
+    primary_direction: [ 1, 0, 0 ]
+    friction_model: [ constant_normal_force_oriented_box, direct ]
+    #friction_model: [ oriented_iterative, direct ]
+    constant_normal_force: 500
+    reference_body: AizuSpider
+    reference_link: CHASSIS
+  -
+    materials: [ AizuSpiderWheel, AizuSpiderTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    restitution: 0.0

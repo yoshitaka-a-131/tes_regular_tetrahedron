@@ -1,0 +1,144 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: regular_tetrahedron
+
+links:
+  -
+    name: BASE
+    translation: [ 0, 0, 0 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+      
+  -
+    name: CYLINDER_1
+    parent: BASE
+    rotation: [ 0, 0, 1, 30 ]
+    translation: [ -0.375, -0.21651, -0.30619 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          height: 1.5
+          radius: 0.0075
+        appearance: &BodyAppearance
+          material:
+            diffuseColor: [ 0, 0.6, 0 ]
+            specularColor: [ 0.2, 0.8, 0.2 ]
+            shininess: 0.6
+            
+  -
+    name: CYLINDER_2
+    parent: BASE
+    rotation: [ 0, 0, 1, -30 ]
+    translation: [ 0.375, -0.21651, -0.30619 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          height: 1.5
+          radius: 0.0075
+        appearance: *BodyAppearance
+        
+  -
+    name: CYLINDER_3
+    parent: BASE
+    rotation: [ 0, 0, 1, 90 ]
+    translation: [ 0, 0.433.01, -0.30619 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          height: 1.5
+          radius: 0.0075
+        appearance: *BodyAppearance
+
+  -
+    name: CYLINDER_4
+    parent: BASE
+    rotation: [[ 0, 0, 1, 60 ],[1,0,0,-54.74]]
+    translation: [ -0.375, 0.21651, 0.30619 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          height: 1.5
+          radius: 0.0075
+        appearance: 
+          material:
+            diffuseColor: [ 0.686, 0.875, 0.894 ]
+            specularColor: [ 0.2, 0.8, 0.2 ]
+            shininess: 0.6
+        
+  -
+    name: CYLINDER_5
+    parent: BASE
+    rotation: [[ 0, 0, 1, -60 ],[1,0,0,-54.74]]
+    translation: [ 0.375, 0.21651, 0.30619 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          height: 1.5
+          radius: 0.0075
+        appearance: *BodyAppearance
+        
+  -
+    name: CYLINDER_6
+    parent: BASE
+    rotation: [[1,0,0,54.74]]
+    translation: [ 0, -0.43301, 0.30619 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 1.0
+    inertia: [
+      1, 0,   0,
+      0,   1, 0,
+      0,   0,   1 ]
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          height: 1.5
+          radius: 0.0075
+        appearance: *BodyAppearance
