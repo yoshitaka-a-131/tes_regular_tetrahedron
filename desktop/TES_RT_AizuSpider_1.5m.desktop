@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Name=TES_RT_AizuSpider
+Name=TES_RT_AizuSpider_1.5m
 Exec=bash -c  "bash /home/ubuntu/ros2_ws/src/choreonoid/ext/tes_regular_tetrahedron/desktop/AizuSpider_1.5m.sh;bash"
 #Icon=/home/ubuntu/Desktop/icon.png
 Terminal=true
