@@ -73,7 +73,6 @@ items:
             record_collision_data: false
             controller_options: ""
             block_scene_view_edit_mode: false
-            time_sync_items: [ 25 ]
             dynamicsMode: "Forward dynamics"
             integrationMode: runge-kutta
             gravity: [ 0, 0, -9.80665 ]
@@ -247,7 +246,6 @@ items:
               1, 0, 0,
               0, 1, 0,
               0, 0, 1 ]
-            jointDisplacements: [ 0, 0, 0, 0, 0, 0 ]
             initialRootPosition: [ 0, 0, 1 ]
             initialRootAttitude: [
               1, 0, 0,
@@ -346,9 +344,9 @@ items:
               0.671595807, -0.722629714, -0.163601345 ]
             initialRootPosition: [ 2.40793102, -1.27082832, 1.72283118 ]
             initialRootAttitude: [
-              0.21324309, 0.399986667, -0.891368648,
-              0.709567804, 0.563752584, 0.422725164,
-              0.671595809, -0.722629711, -0.163601318 ]
+              0.213243072, 0.399986679, -0.89136865,
+              0.709567816, 0.563752574, 0.422725161,
+              0.671595807, -0.722629714, -0.163601344 ]
             fix_root: true
             collisionDetection: true
             selfCollisionDetection: false
@@ -525,7 +523,7 @@ items:
                     reloading: false
                     export_symbols: false
         -
-          id: 26
+          id: 25
           name: "MultiCollider"
           plugin: SimpleCollider
           class: MultiColliderItem
@@ -634,7 +632,7 @@ views:
     state:
       operation_mode: view
       viewpoint_operation_mode: third_person
-      focus_position: [ -2.31284, -1.21358, 1.90922 ]
+      focus_position: [ -1.1119, -0.677998, 1.49766 ]
       visible_polygon_elements: [ face ]
       highlighting: false
       collision_lines: false
@@ -642,9 +640,9 @@ views:
         -
           camera: [ System, Perspective ]
           is_current: true
-          eye: [ -4.65552, -12.1038, 2.70464 ]
-          direction: [ 0.36333, 0.931416, -0.0213396 ]
-          up: [ 0.00775508, 0.0198806, 0.999772 ]
+          eye: [ -0.887008, -11.1735, 1.5057 ]
+          direction: [ 0.0616459, 0.994163, 0.0885427 ]
+          up: [ -0.00547981, -0.0883729, 0.996072 ]
         -
           camera: [ System, Orthographic ]
           ortho_height: 20
