@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Type=Application
 Name=TES_RT_HobbyDrone
-Exec=bash -c  "bash /home/ubuntu/tes_regular_tetrahedron/desktop/HobbyDrone.sh;bash"
+Exec=bash -c  "bash /home/ubuntu/ros2_ws/src/choreonoid/ext/tes_regular_tetrahedron/desktop/HobbyDrone.sh;bash"
 #Icon=/home/ubuntu/Desktop/icon.png
 Terminal=true
